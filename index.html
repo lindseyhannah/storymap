@@ -57,7 +57,7 @@
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Number of Hate Crimes, 2017</h4>' +  (props ?
-			'<b>' + props.NAME + '</b><br />' + props.numberOfHateCrimes + ' Hate Crimes in 2017'
+			'<b>' + props.NAME + '</b><br />' + props.numberOfHateCrimes + ' Total Hate Crimes' + '<br>' + props.perOneMil+ ' Hate Crimes per 1,000,000 people'
 			: 'Hover over a state');
 	};
 
@@ -72,14 +72,14 @@
 				d > 20   ? '#FEB24C' :
 				d > 10  ? '#FEd976' :
 				d > 0   ? '#Ffffb2' :
-							'#FFEDA0';
+				else '#666';
 	}
 
 	function style(feature) {
 		return {
-			weight: 2,
+			weight: .5,
 			opacity: 1,
-			color: 'white',
+			color: 'gray',
 			dashArray: '3',
 			fillOpacity: 0.7,
 			fillColor: getColor(feature.properties.perOneMil)
@@ -90,7 +90,7 @@
 		var layer = e.target;
 
 		layer.setStyle({
-			weight: 5,
+			weight: 4,
 			color: '#666',
 			dashArray: '',
 			fillOpacity: 0.7
