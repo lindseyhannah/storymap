@@ -82,7 +82,7 @@
 			color: 'white',
 			dashArray: '3',
 			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.density)
+			fillColor: getColor(feature.properties.perOneMil)
 		};
 	}
 
@@ -130,7 +130,7 @@ $.getJSON('hateCrime2017.geojson', function(data){
   }).addTo(map);
 });
 
-	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+
 
 
 	var legend = L.control({position: 'bottomright'});
