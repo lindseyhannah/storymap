@@ -14,11 +14,7 @@
      <script src="jquery-2.1.1.min.js"></script> 
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-    <link rel="stylesheet" href="../src/L.Control.Sidebar.css" />
-
+    
 	<style>
 		html, body {
 			height: 100%;
@@ -36,15 +32,7 @@
 </head>
 <body>
 
-<div id='sidebar'>
-	 <h1>Hate Crimes by Incident Classification</h1>
-
-    </div>
-
 <div id='map'></div>
-
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <script src="../src/L.Control.Sidebar.js"></script>
 
 
 <script>
@@ -58,17 +46,6 @@
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox.light'
 	}).addTo(map);
-
-	var sidebar=L.control.sidebar('sidebar', {
-            closeButton: true,
-            position: 'left'
-        });
-        map.addControl(sidebar);
-
-        setTimeout(function () {
-            sidebar.show();
-        }, 500);
-
 
 
 	// control that shows state info on hover
@@ -152,15 +129,7 @@ $.getJSON('hateCrime2017.geojson', function(data){
   geojson = L.geoJson(data, {
     style: style,
     onEachFeature: onEachFeature
-  }).addTo(map).on('click', function(){
-  		sidebar.toggle();
-  });
-  map.on('click', function() {
-  	sidebar.hide();
-  })
-  L.DomEvent.on(sidebar.getCloseButton(), 'click', function(){
-  	console.log('close button clicked.');
-  });
+  }).addTo(map);
 });
 
 
