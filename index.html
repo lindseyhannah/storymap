@@ -48,7 +48,7 @@
   });
     map.addLayer(mapTile);
 
-    L.getJSON("hateCrime2017.geojson").addTo(map);
+   var states = L.geoJson("hateCrime2017.geojson").addTo(map);
 
 
   </Script>
