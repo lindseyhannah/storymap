@@ -123,10 +123,10 @@
 		});
 	}
 
-	$.getJSON ("hateCrime2017.json", {
+	$.getJSON ("hateCrime2017.json"), {
 		style: style,
 		onEachFeature: onEachFeature
-	}).addTo(map);
+	}.addTo(map);
 
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
