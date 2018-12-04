@@ -128,17 +128,6 @@ $.getJSON('hateCrime2017.geojson', function(data){
 });
 
 
-	var stateslessthan=("statesLessthan.json");
-
-	var polygonGroup = L.layerGroup().addTo(map);
-
-polygonGroup.addLayer(stateslessthan);
-
-L.control.layers(null, {
-  "stateslessthan": polygonGroup
-}).addTo(map);
-
-
 	var polystyle= {
 		    weight: 4,
 			opacity: 1,
@@ -149,7 +138,7 @@ L.control.layers(null, {
 		L.geoJson(data ,{
 			style: polystyle,
 		}).addTo(map);			
-	})
+})
 
 	var legend = L.control({position: 'bottomright'});
 
