@@ -128,6 +128,16 @@ $.getJSON('hateCrime2017.geojson', function(data){
 });
 
 
+$getJSON("statesLessthan.json", function(badreporting){
+	L.geoJson(badreporting, {
+		style {
+			weight: 1,
+			opacity: 1,
+			color: '#000000' 
+		       };
+	}).addTo(map);
+
+
 
 
 	var legend = L.control({position: 'bottomright'});
