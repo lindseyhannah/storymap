@@ -127,17 +127,23 @@ $.getJSON('hateCrime2017.geojson', function(data){
   }).addTo(map);
 });
 
-//$.getJSON("statesLessthan.json",function(data){
-//			var datalayer = L.geoJson(data);
-//			geojson= L.geoJson(data, {
-//				style:
-//					weight: .5,
-//					opacity: 1,
-//					color: '#666'
-//					}
-//					)
-//
-//			}).addTo(map);
+
+
+
+
+
+
+	var stateslessthan=("statesLessthan.json");
+
+	var polygonGroup = L.layerGroup().addTo(map);
+
+polygonGroup.addLayer(stateslessthan);
+
+L.control.layers(null, {
+  "stateslessthan": polygonGroup
+}).addTo(map);
+
+
 	var polystyle= {
 		    weight: 4,
 			opacity: 1,
@@ -148,7 +154,7 @@ $.getJSON('hateCrime2017.geojson', function(data){
 		L.geoJson(data ,{
 			style: polystyle,
 		}).addTo(map);			
-})
+	})
 
 	var legend = L.control({position: 'bottomright'});
 
