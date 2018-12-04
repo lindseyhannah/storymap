@@ -54,7 +54,7 @@
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Number of Hate Crimes, 2017</h4>' +  (props ?
-			'<b>' + props.NAME + '</b><br />' + props.numberOfHateCrimes + ' Total Hate Crimes' + '<br>' + props.perOneMil+ ' Hate Crimes per 1,000,000 people'
+			'<b>' + props.NAME + '</b><br />' + props.numberOfHateCrimes + ' Total Hate Crimes' + '<br>' + props.perOneMil+ ' Hate Crimes per 1,000,000 people'+ '<br>' + props.percentNoReport+ '% State Entities Not Reporting Data'
 			: 'Hover over a state');
 	};
 
