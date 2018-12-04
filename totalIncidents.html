@@ -139,10 +139,9 @@ $.getJSON('hateCrime2017.geojson', function(data){
 //
 //			}).addTo(map);
 	var polystyle= {
-		weight: .5,
+		    weight: 2,
 			opacity: 1,
 			color: '#666',
-			fillOpacity: 0.7
 	};
     //get the geojson data and place on map as polygons via polygon style set above.  Bind info to the popups, add to map
 	$.getJSON("statesLessthan.json",function(data){
